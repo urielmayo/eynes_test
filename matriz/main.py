@@ -33,7 +33,6 @@ def get_four_in_line(matrix):
                 four_in_line_list.append(((row,col),(row,col + offset -1)))
             elif transposed_matrix[row][col:offset + col] == [item , item - 1, item -2, item-3]:
                 four_in_line_list.append(((row,col + offset -1),(row,col)))
-    #print(four_in_line_list)
     return four_in_line_list
 
 def print_matrix(matrix):
