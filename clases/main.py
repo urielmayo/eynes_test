@@ -1,4 +1,5 @@
 from math import pi
+from turtle import Turtle
 
 class Circle:
     def __init__(self, radius):
@@ -12,12 +13,18 @@ class Circle:
             self.radius = radius
         
     def get_perimeter(self):
+        """returns circle perimeter"""
         return pi*2*self.radius
     
     def get_area(self):
+        """returns circle area"""
         return pi*(self.radius**2)
     
     def multiply_circle(self, n):
+        """
+        Generates a new circle which radius is self circle radius times parameter 'n'.
+        'n' must be grater than zero. Otherwise the new circle won't be created
+        """
         try:
             if n <= 0:
                 raise ValueError("multplication times zero is not allowed")
@@ -34,12 +41,17 @@ class Circle:
             print(f"ValueError in set_radius(): {ve}")
         else:
             self.radius = radius
+    
+    def __str__(self):
+        t = Turtle()
+        t.circle(radius = self.radius)
+        return ""
+
 
 
 if __name__=='__main__':
     circle = Circle(radius = 2)
-    circle.set_radius(20)
+    circle.set_radius(100)
     print(f"circle.get_perimeter()")
-    biger_circle = circle.multiply_circle(n = -2)
-    print(biger_circle.get_area())
+    print(circle)
     
